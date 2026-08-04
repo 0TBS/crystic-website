@@ -18,6 +18,21 @@ export default function Home() {
           Our new website is on its way. We can&rsquo;t wait to share it with you.
         </p>
 
+        <div className="mt-10 flex flex-col items-center gap-3 text-base text-gray-700">
+          <a
+            href="tel:+14160000000"
+            className="font-medium text-brand-dark hover:text-brand transition-colors"
+          >
+            416-000-0000
+          </a>
+          <a
+            href="mailto:info@crystic.ca"
+            className="font-medium text-brand-dark hover:text-brand transition-colors"
+          >
+            info@crystic.ca
+          </a>
+        </div>
+
         <p className="mt-12 text-sm text-gray-400">
           &copy; {new Date().getFullYear()} Crystic
         </p>
