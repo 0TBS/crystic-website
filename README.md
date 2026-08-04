@@ -22,22 +22,9 @@ cp .env.example .env.local   # then fill in your real values
 npm run dev                  # opens http://localhost:3000
 ```
 
-## Images (Backblaze)
-
-Images live in a single Backblaze B2 bucket that BOTH the live and staging
-sites share, so no image is ever stored twice. Reference an image like this:
-
-```tsx
-import { b2 } from "@/lib/images";
-
-<img src={b2("hero/banner.jpg")} alt="Banner" />
-```
-
-The bucket's public base URL is set once via the `NEXT_PUBLIC_B2_BUCKET_URL`
-environment variable (identical on both sites).
-
 ## Environment variables
 
 See `.env.example`. On Railway these are set in each service's **Variables**
-tab. The only variable that differs between the two sites is
-`NEXT_PUBLIC_SITE_ENV` (`production` vs `staging`).
+tab. The only variable is `NEXT_PUBLIC_SITE_ENV` (`production` on the live
+service, `staging` on the staging service — the latter shows an orange
+"STAGING" banner).
