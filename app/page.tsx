@@ -15,7 +15,7 @@ export default function Home() {
         </div>
 
         <p className="mt-8 text-lg text-gray-600 max-w-md mx-auto">
-          Our new website is on its way. We can&rsquo;t wait to share it with you.
+          Our new website is on its way. We can&rsquo;t wait to share it with you. Something great is coming.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-3 text-base text-gray-700">
