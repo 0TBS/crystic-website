@@ -44,7 +44,7 @@ To finish image hosting:
 
 ### 1. Create the B2 bucket
 
-1. In Backblaze B2, create a **public** bucket named `crystic-media`.
+1. In Backblaze B2, create a **public** bucket named `crystic-media1`.
 2. Create an **application key** scoped to that bucket (read & write).
 3. Note the S3 endpoint (e.g. `https://s3.us-west-004.backblazeb2.com`), the
    region (e.g. `us-west-004`), the key ID and the key secret.
@@ -57,7 +57,7 @@ Put images under a local `media/` folder mirroring the keys, e.g.
 ```bash
 export B2_ENDPOINT=https://s3.us-west-004.backblazeb2.com
 export B2_REGION=us-west-004
-export B2_BUCKET=crystic-media
+export B2_BUCKET=crystic-media1
 export B2_KEY_ID=...        # scoped application key id
 export B2_APP_KEY=...       # scoped application key secret
 node scripts/upload-media.mjs ./media
@@ -76,8 +76,8 @@ bucket path rewritten. Simplest reliable option:
    `f004.backblazeb2.com` (use the `fNNN` host from your bucket's friendly
    URL), **proxied** (orange cloud).
 2. Add a **Transform Rule → Rewrite URL** on `img.crystic.ca` that prefixes the
-   path with `/file/crystic-media`, so
-   `img.crystic.ca/products/x.jpg` → `/file/crystic-media/products/x.jpg`
+   path with `/file/crystic-media1`, so
+   `img.crystic.ca/products/x.jpg` → `/file/crystic-media1/products/x.jpg`
    at the origin.
 3. Alternatively, front the bucket with a small Cloudflare Worker that maps the
    hostname to the B2 file path — this also lets you cache aggressively.
